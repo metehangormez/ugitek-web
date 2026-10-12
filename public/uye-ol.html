@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Üye Ol — UGİTEK</title>
+<meta name="description" content="UGİTEK'e nasıl üye olunur? Manisa Celal Bayar Üniversitesi öğrencisiysen üye kayıt formunu doldur, WhatsApp duyuru grubumuza katıl.">
+<meta name="theme-color" content="#050a18">
+<!-- Paylaşım önizlemesi (WhatsApp, Instagram, LinkedIn, X) -->
+<!-- Alan adı değişirse bu dosyalardaki https://ugitek.tech adresini değiştirin. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UGİTEK">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Üye Ol — UGİTEK">
+<meta property="og:description" content="UGİTEK'e nasıl üye olunur? Manisa Celal Bayar Üniversitesi öğrencisiysen üye kayıt formunu doldur, WhatsApp duyuru grubumuza katıl.">
+<meta property="og:url" content="https://ugitek.tech/uye-ol.html">
+<meta property="og:image" content="https://ugitek.tech/assets/og.jpg">
+<meta property="og:image:width" content="1119">
+<meta property="og:image:height" content="588">
+<meta property="og:image:alt" content="UGİTEK — Fikirden girişime, kampüsten dünyaya.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ugitek.tech/uye-ol.html">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="join">
+
+<div id="nav-root"></div>
+
+<main>
+
+<!-- ================================================================= GİRİŞ -->
+<section class="section" style="padding-top:calc(var(--nav-h) + 4rem);padding-bottom:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Üyelik</span>
+      <h1 style="font-size:clamp(2rem,7.5vw,3.8rem)">Aramıza <span class="grad-text">katıl.</span></h1>
+      <p class="lead">
+        Manisa Celal Bayar Üniversitesi öğrencisiysen tek yapman gereken kayıt formunu
+        doldurmak. Üyelik <strong>ücretsiz</strong>, bölüm ve sınıf fark etmez —
+        mühendisiyle hukukçusuyla aynı masadayız.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== ADIMLAR -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Üç adım</span>
+      <h2>Nasıl üye olunur?</h2>
+    </div>
+
+    <div class="grid grid-3" id="stepGrid">
+      <article class="card card-glow" data-reveal>
+        <span class="card-icon" data-icon="ticket"></span>
+        <h3 style="margin-bottom:.5rem">1 · Formu doldur</h3>
+        <p style="font-size:.93rem">
+          Ad, soyad, bölüm, sınıf ve e-posta. İki dakika bile sürmüyor.
+        </p>
+      </article>
+
+      <article class="card card-glow" data-reveal>
+        <span class="card-icon" data-icon="whatsapp"></span>
+        <h3 style="margin-bottom:.5rem">2 · Gruba katıl</h3>
+        <p style="font-size:.93rem">
+          WhatsApp duyuru grubumuza gir. Etkinlik ve kontenjan haberleri
+          önce orada paylaşılıyor.
+        </p>
+      </article>
+
+      <article class="card card-glow" data-reveal>
+        <span class="card-icon" data-icon="wave"></span>
+        <h3 style="margin-bottom:.5rem">3 · İlk etkinlikte görüşelim</h3>
+        <p style="font-size:.93rem">
+          Dönem açılışındaki tanışma toplantısına gel, ekipleri tanı,
+          nerede yer almak istediğine karar ver.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== BAĞLANTILAR -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band" data-reveal="scale">
+      <span class="eyebrow">Hazırsan</span>
+      <h2>Kayıt formu <span class="grad-text">burada.</span></h2>
+      <p>
+        Form Google Forms üzerinde tutuluyor; yanıtlar doğrudan yönetim kuruluna ulaşıyor.
+        Kaydın işlendiğinde e-posta ile dönüş yapıyoruz.
+      </p>
+      <div class="cta-actions" id="joinActions"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== SSS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Merak edilenler</span>
+      <h2>Üyelik hakkında</h2>
+    </div>
+    <div class="accordion" data-single="true" id="joinFaq"></div>
+  </div>
+</section>
+
+<!-- ============================================================ YÖNLENDİRME -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="grid grid-2">
+      <article class="card card-glow" data-reveal>
+        <span class="card-icon" data-icon="briefcase"></span>
+        <h3 style="margin-bottom:.6rem">Görev de almak ister misin?</h3>
+        <p style="font-size:.93rem;margin-bottom:1.2rem">
+          Sadece katılmakla kalmayıp topluluğu yöneten ekiplerden birinde
+          çalışmak istiyorsan idari kadro sayfasına göz at.
+        </p>
+        <a class="btn btn-ghost btn-sm" href="idari-kadro.html">İdari Kadro</a>
+      </article>
+
+      <article class="card card-glow" data-reveal>
+        <span class="card-icon" data-icon="social"></span>
+        <h3 style="margin-bottom:.6rem">Önce bizi tanı</h3>
+        <p style="font-size:.93rem;margin-bottom:1.2rem">
+          Ne yaptığımızı merak ediyorsan etkinlik arşivimize bak ya da
+          Instagram'dan takip et — her şeyi oradan duyuruyoruz.
+        </p>
+        <a class="btn btn-ghost btn-sm" href="etkinlikler.html">Etkinlikler</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script src="js/data.js"></script>
+<script>
+window.renderPage = function () {
+  const D = window.UGITEK;
+  const { esc, stagger } = window.UGITEK_UI;
+
+  /* --- başvuru butonları (adresler data.js'teki info bloğundan gelir) --- */
+  const arrow = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+    + ' stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">'
+    + '<path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  document.getElementById('joinActions').innerHTML =
+    '<a class="btn btn-primary btn-arrow" href="' + D.info.memberForm + '" target="_blank" rel="noopener">'
+      + '<span class="btn-label">Üye Kayıt Formu</span>' + arrow + '</a>'
+    + '<a class="btn btn-ghost" href="' + D.info.whatsapp + '" target="_blank" rel="noopener">WhatsApp Grubu</a>'
+    + '<a class="btn btn-ghost" href="' + D.info.instagram + '" target="_blank" rel="noopener">Instagram</a>';
+
+  /* --- üyelikle ilgili sorular --- */
+  const qa = [
+    ['Üyelik ücretli mi?',
+     'Hayır, tamamen ücretsiz. Aidat yok. Etkinliklerimizin de neredeyse tamamı ücretsizdir; ücretli olanlar (bazı geziler gibi) duyurularda ayrıca belirtilir.'],
+    ['Kimler üye olabilir?',
+     'Manisa Celal Bayar Üniversitesi’nde okuyan her öğrenci. Bölüm, sınıf ya da fakülte ayrımı yok.'],
+    ['Teknik bilgim yok, yine de katılabilir miyim?',
+     'Kesinlikle. Topluluğun yarısı teknik olmayan işlerden oluşuyor: organizasyon, iletişim, sponsorluk, tasarım, içerik... Merak ve istek yeterli, gerisini birlikte öğreniyoruz.'],
+    ['Formu doldurdum, sırada ne var?',
+     'Yanıtın yönetim kuruluna ulaşıyor. Kaydın işlendiğinde e-posta ile dönüş yapıyoruz ve WhatsApp duyuru grubuna katılman için yönlendiriyoruz.'],
+    ['Etkinlikleri nereden takip edebilirim?',
+     'En hızlı yol Instagram hesabımız @mcbu_ugitek. WhatsApp duyuru grubumuzda da her etkinlik önceden paylaşılıyor.'],
+  ];
+
+  document.getElementById('joinFaq').innerHTML = qa.map(([q, a]) => `
+    <div class="acc-item" data-open="false" data-reveal>
+      <button class="acc-head" aria-expanded="false">
+        <span class="acc-text">${esc(q)}</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-body"><div><p>${esc(a)}</p></div></div>
+    </div>`).join('');
+
+  stagger(document.getElementById('stepGrid'), 80);
+};
+</script>
+<script src="js/site.js"></script>
+</body>
+</html>

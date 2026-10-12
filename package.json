@@ -1,0 +1,14 @@
+{
+  "name": "ugitek-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCBÜ Uluslararası Girişimcilik ve Teknoloji Topluluğu (UGİTEK) statik web sitesi",
+  "scripts": {
+    "start": "node tools/serve.cjs",
+    "zip": "node tools/make-zip.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

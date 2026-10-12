@@ -1,0 +1,40 @@
+YÖNETİM KURULU FOTOĞRAFLARI
+===========================
+
+Bu klasöre yönetim kurulu üyelerinin fotoğraflarını koyabilirsiniz.
+Fotoğraf yoksa site otomatik olarak ismin baş harflerini renkli bir
+daire içinde gösterir — yani bu klasörü boş bırakmak da tamamen sorunsuz.
+
+Dosya adı kuralı
+----------------
+İsmi küçük harfe çevirin, Türkçe karakterleri sadeleştirin,
+boşlukları tire (-) yapın ve .jpg uzantısı verin.
+
+  Beyza ŞAHİN          ->  beyza-sahin.jpg
+  Zafer TAYBAR         ->  zafer-taybar.jpg
+  Yiğit BONCUK         ->  yigit-boncuk.jpg
+  Furkan ÇİÇEK         ->  furkan-cicek.jpg
+  Müge TÜRKYILMAZ      ->  muge-turkyilmaz.jpg
+  Emin ÜLGÜÇ           ->  emin-ulguc.jpg
+  Esin METE            ->  esin-mete.jpg
+  Betül İNCİ           ->  betul-inci.jpg
+  Kerem ÜLVER          ->  kerem-ulver.jpg
+  Meryem ZEYREK        ->  meryem-zeyrek.jpg
+  Fatma Nur KELOĞLU    ->  fatma-nur-keloglu.jpg
+  Metehan GÖRMEZ       ->  metehan-gormez.jpg
+  Arda GÜN             ->  arda-gun.jpg
+  Hatice Nur AKÖZ      ->  hatice-nur-akoz.jpg
+  Selin GÜNGÖR         ->  selin-gungor.jpg
+  Sude Nur SEVER       ->  sude-nur-sever.jpg
+  Ebru KAPLAN          ->  ebru-kaplan.jpg
+  Ceyda TOSUN          ->  ceyda-tosun.jpg
+  Şahan Zeki ALTIPARMAK->  sahan-zeki-altiparmak.jpg
+  Elif Naz KUNT        ->  elif-naz-kunt.jpg
+  Yusuf Talha TOK      ->  yusuf-talha-tok.jpg
+  Halil AYDIN          ->  halil-aydin.jpg
+
+Öneriler
+--------
+- Kare (1:1) fotoğraf kullanın, örn. 400x400 piksel.
+- Dosya boyutunu 200 KB altında tutun; sayfa hızlı açılsın.
+- Yüz ortada olsun, daire içine kırpılacak.

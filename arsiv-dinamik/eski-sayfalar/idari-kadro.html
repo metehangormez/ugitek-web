@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İdari Kadro Başvurusu — UGİTEK</title>
+<meta name="description" content="UGİTEK idari kadro başvurusu. Sponsorluk, teknik gezi, sosyal medya, iletişim, organizasyon, tasarım ve yazılım ekiplerinde görev al.">
+<meta name="theme-color" content="#050a18">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="staff">
+
+<div id="nav-root"></div>
+
+<main class="form-shell">
+  <div class="wrap">
+
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">İdari Kadro · 2026 – 2027</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem)">Sahneyi <span class="grad-text-cool">kuran taraf</span> ol.</h1>
+      <p class="lead">
+        Etkinliğe katılmak güzel, ama asıl iş perde arkasında dönüyor. Sponsor bulmak,
+        gezi kurgulamak, reels çekmek, sahne akışını yönetmek… Hangi ekipte olmak istediğini seç,
+        gerisini birlikte öğrenelim.
+      </p>
+    </div>
+
+    <!-- ------------------------------------------------------- ekip kartları -->
+    <section style="margin-bottom:clamp(2.5rem,6vw,4rem)">
+      <div class="grid grid-3" id="teamCards"></div>
+    </section>
+
+    <div class="form-layout">
+
+      <!-- ------------------------------------------------------------ form -->
+      <div>
+        <div class="form-card" data-reveal>
+          <form id="staffForm" novalidate>
+            <div class="alert" role="alert"></div>
+
+            <fieldset>
+              <legend>Kimlik bilgileri</legend>
+              <div class="field-grid">
+                <div class="field full">
+                  <label for="fullName">Ad Soyad <span class="req">*</span></label>
+                  <input id="fullName" name="fullName" type="text" autocomplete="name"
+                         placeholder="Örn. Ayşe Yılmaz" required>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="studentNo">Öğrenci Numarası <span class="req">*</span></label>
+                  <input id="studentNo" name="studentNo" type="text" inputmode="numeric"
+                         placeholder="Örn. 210315023" required>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Telefon <span class="req">*</span></label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel"
+                         placeholder="05XX XXX XX XX" required>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field full">
+                  <label for="email">E-posta <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email"
+                         placeholder="ornek@ogr.cbu.edu.tr" required>
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Okul bilgileri</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="department">Bölüm <span class="req">*</span></label>
+                  <input id="department" name="department" type="text" list="departments"
+                         placeholder="Bölümünü yaz veya seç" required>
+                  <datalist id="departments"></datalist>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="grade">Sınıf <span class="req">*</span></label>
+                  <select id="grade" name="grade" required>
+                    <option value="">Seçiniz…</option>
+                  </select>
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Tercihlerin</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="firstChoice">1. Tercih Ekip <span class="req">*</span></label>
+                  <select id="firstChoice" name="firstChoice" required>
+                    <option value="">Seçiniz…</option>
+                  </select>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="secondChoice">2. Tercih Ekip</label>
+                  <select id="secondChoice" name="secondChoice">
+                    <option value="">Yok / fark etmez</option>
+                  </select>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="weeklyHours">Haftada ayırabileceğin süre <span class="req">*</span></label>
+                  <select id="weeklyHours" name="weeklyHours" required>
+                    <option value="">Seçiniz…</option>
+                  </select>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="portfolio">Portfolyo / LinkedIn / GitHub</label>
+                  <input id="portfolio" name="portfolio" type="url"
+                         placeholder="https://…">
+                  <span class="hint">Varsa paylaş — tasarım ve yazılım ekipleri için artı puan.</span>
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset style="margin-bottom:0">
+              <legend>Seni tanıyalım</legend>
+
+              <div class="field full" style="margin-bottom:1.1rem">
+                <label for="motivation">Neden bu ekipte olmak istiyorsun? <span class="req">*</span></label>
+                <textarea id="motivation" name="motivation" required
+                          placeholder="Seçtiğin ekipte ne yapmak istediğini ve neden sen olman gerektiğini anlat. En az 40 karakter."></textarea>
+                <span class="hint">Kısa ama net yaz. Bizi burası ikna ediyor.</span>
+                <span class="err"></span>
+              </div>
+
+              <div class="field full" style="margin-bottom:1.1rem">
+                <label for="experience">Daha önce benzer bir işte çalıştın mı?</label>
+                <textarea id="experience" name="experience"
+                          placeholder="Topluluk, organizasyon, staj, proje, gönüllülük… Hiç yoksa da sorun değil, boş bırakabilirsin."></textarea>
+                <span class="err"></span>
+              </div>
+
+              <div class="field full" style="margin-bottom:1.1rem">
+                <label class="check">
+                  <input type="checkbox" name="isMember">
+                  <span>UGİTEK’e daha önce üye oldum.</span>
+                </label>
+              </div>
+
+              <div class="field full">
+                <label class="check">
+                  <input type="checkbox" name="kvkk" required>
+                  <span>
+                    Verdiğim bilgilerin idari kadro değerlendirme süreci için işlenmesini
+                    kabul ediyorum. Bilgilerim üçüncü kişilerle paylaşılmaz.
+                  </span>
+                </label>
+                <span class="err"></span>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Başvuruyu Gönder</span>
+              </button>
+              <span class="form-note">
+                Ön elemeyi geçen adaylar kısa bir tanışma görüşmesine davet edilir.
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <!-- --------------------------------------------------- başarı ekranı -->
+        <div class="form-card success-panel" id="successPanel">
+          <div class="success-mark" aria-hidden="true">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h2>Başvurun alındı! 🚀</h2>
+          <p style="max-width:50ch;margin-inline:auto">
+            Yönetim kurulu tüm başvuruları tek tek okuyor. Ön elemeyi geçersen
+            kısa bir tanışma görüşmesi için sana ulaşacağız — takvimini boş tut.
+          </p>
+          <div class="success-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/mcbu_ugitek/" target="_blank" rel="noopener">Instagram’da Takip Et</a>
+            <a class="btn btn-ghost" href="/biz-kimiz">Ekipleri Tanı</a>
+            <a class="btn btn-ghost" href="/">Ana Sayfa</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------- yan panel -->
+      <aside class="form-side">
+        <div class="card" data-reveal="right">
+          <h3 style="margin-bottom:1rem">Süreç nasıl işliyor?</h3>
+          <ol style="margin:0;padding-left:1.1rem;display:grid;gap:.85rem;color:var(--muted);font-size:.92rem">
+            <li><strong style="color:var(--text)">Başvuru.</strong> Bu formu doldur.</li>
+            <li><strong style="color:var(--text)">Ön eleme.</strong> Yönetim kurulu tercih ve motivasyona bakar.</li>
+            <li><strong style="color:var(--text)">Tanışma görüşmesi.</strong> 15–20 dakikalık samimi bir sohbet.</li>
+            <li><strong style="color:var(--text)">Ekibe katılım.</strong> Ekip liderinle tanışıp ilk göreve başlarsın.</li>
+          </ol>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:90ms">
+          <h3 style="margin-bottom:.7rem">Ne bekliyoruz?</h3>
+          <ul style="margin:0;padding-left:1.1rem;display:grid;gap:.5rem;color:var(--muted);font-size:.92rem">
+            <li>Haftalık ekip toplantısına katılım</li>
+            <li>Verdiği sözü tutma — takvim bizde çok önemli</li>
+            <li>Etkinlik günlerinde sahada olma</li>
+            <li>Öğrenmeye açıklık; tecrübe şart değil</li>
+          </ul>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:180ms">
+          <h3 style="margin-bottom:.7rem">Önce üye olmak ister misin?</h3>
+          <p style="font-size:.92rem;margin-bottom:1.1rem">
+            İdari kadro görev almak içindir. Sadece etkinliklere katılmak istiyorsan
+            normal üyelik yeterli — ve her zaman açık.
+          </p>
+          <a class="btn btn-ghost btn-sm" href="/uye-ol">Üyelik Başvurusu</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/forms.js"></script>
+<script>
+window.renderPage = function () {
+  const D = window.UGITEK;
+  const { esc, icon, stagger } = window.UGITEK_UI;
+
+  /* --- ekip tanıtım kartları --- */
+  document.getElementById('teamCards').innerHTML = D.teams.map((t) => `
+    <article class="card card-glow" data-reveal>
+      <span class="card-icon">${icon(t.icon)}</span>
+      <h3 style="margin-bottom:.5rem">${esc(t.name)}</h3>
+      <p style="font-size:.92rem">${esc(t.desc)}</p>
+    </article>`).join('');
+  stagger(document.getElementById('teamCards'), 70);
+
+  /* --- form seçenekleri --- */
+  document.getElementById('departments').innerHTML =
+    D.departments.map((d) => '<option value="' + esc(d) + '"></option>').join('');
+
+  document.getElementById('grade').insertAdjacentHTML('beforeend',
+    D.classes.map((c) => '<option>' + esc(c) + '</option>').join(''));
+
+  const teamOptions = D.teams.map((t) => '<option>' + esc(t.name) + '</option>').join('');
+  document.getElementById('firstChoice').insertAdjacentHTML('beforeend', teamOptions);
+  document.getElementById('secondChoice').insertAdjacentHTML('beforeend', teamOptions);
+
+  document.getElementById('weeklyHours').insertAdjacentHTML('beforeend',
+    D.weeklyHours.map((h) => '<option>' + esc(h) + '</option>').join(''));
+
+  // data.js'te externalForms.staff doluysa Google Form'a yönlendir.
+  if (window.UGITEK_FORM.useExternalForm('staff', 'staffForm', 'İdari kadro başvurusu')) return;
+
+  window.UGITEK_FORM.wire({
+    form: 'staffForm',
+    endpoint: '/api/applications/staff',
+    panel: 'successPanel',
+  });
+};
+</script>
+<script src="/js/site.js"></script>
+</body>
+</html>

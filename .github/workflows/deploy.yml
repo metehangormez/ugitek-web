@@ -1,0 +1,43 @@
+# UGİTEK — siteyi GitHub Pages'e yayınlar
+#
+# main dalına her push'ta public/ klasörü otomatik yayına çıkar.
+# Elle çalıştırmak için: GitHub > Actions > "Siteyi yayınla" > Run workflow
+
+name: Siteyi yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda tek yayın çalışsın; sıradakiler beklesin.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  yayinla:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Pages ayarlarını oku
+        uses: actions/configure-pages@v5
+
+      - name: public/ klasörünü paketle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Yayına al
+        id: deployment
+        uses: actions/deploy-pages@v4

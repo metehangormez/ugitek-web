@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etkinlikler — UGİTEK</title>
+<meta name="description" content="UGİTEK etkinlikleri: Future Tech zirveleri, AEGEUS Bootcamp, Mezuna Sor, teknik geziler, Quiz Night ve daha fazlası.">
+<meta name="theme-color" content="#050a18">
+<!-- Paylaşım önizlemesi (WhatsApp, Instagram, LinkedIn, X) -->
+<!-- Alan adı değişirse bu dosyalardaki https://ugitek.tech adresini değiştirin. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UGİTEK">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Etkinlikler — UGİTEK">
+<meta property="og:description" content="UGİTEK etkinlikleri: Future Tech zirveleri, AEGEUS Bootcamp, Mezuna Sor, teknik geziler, Quiz Night ve daha fazlası.">
+<meta property="og:url" content="https://ugitek.tech/etkinlikler.html">
+<meta property="og:image" content="https://ugitek.tech/assets/og.jpg">
+<meta property="og:image:width" content="1119">
+<meta property="og:image:height" content="588">
+<meta property="og:image:alt" content="UGİTEK — Fikirden girişime, kampüsten dünyaya.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ugitek.tech/etkinlikler.html">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="events">
+
+<div id="nav-root"></div>
+
+<main>
+
+<!-- ================================================================= GİRİŞ -->
+<section class="section" style="padding-top:calc(var(--nav-h) + 4rem);padding-bottom:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Etkinlikler</span>
+      <h1 style="font-size:clamp(2.2rem,5.5vw,3.8rem)">
+        Dönem boyunca <span class="grad-text">durmuyoruz.</span>
+      </h1>
+      <p class="lead">
+        Zirveden bootcampe, fabrika gezisinden quiz gecesine. Aşağıda düzenli olarak
+        yaptığımız programlar ve geride bıraktığımız etkinlikler var.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== PROGRAMLAR -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Programlarımız</span>
+      <h2>Takvimimizde ne var?</h2>
+    </div>
+
+    <div class="grid grid-3" id="eventGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================== FORMATLAR -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Detaylar</span>
+      <h2>Bu etkinlikler <span class="grad-text-cool">nasıl işliyor?</span></h2>
+      <p class="lead">Başlığa tıkla, formatı ve içeriği aç.</p>
+    </div>
+
+    <div class="accordion" data-single="true" id="pillars"></div>
+  </div>
+</section>
+
+<!-- =============================================================== GALERİ -->
+<section class="section" id="galeri" style="padding-top:0" hidden>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Kareler</span>
+      <h2>Etkinliklerden</h2>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ================================================================= ARŞİV -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Arşiv</span>
+      <h2>Geride bıraktıklarımız</h2>
+      <p class="lead">
+        Fotoğrafların tamamı Instagram hesabımızda —
+        <a href="https://www.instagram.com/mcbu_ugitek/" target="_blank" rel="noopener"
+           style="color:var(--orange-2);text-decoration:underline;text-underline-offset:3px">@mcbu_ugitek</a>.
+      </p>
+    </div>
+
+    <div class="grid grid-2" id="archiveGrid"></div>
+  </div>
+</section>
+
+<!-- ===================================================================== CTA -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band" data-reveal="scale">
+      <span class="eyebrow">Kaçırmak istemiyorsan</span>
+      <h2>Duyuruları <span class="grad-text">ilk sen al.</span></h2>
+      <p>
+        Üye olduğunda WhatsApp duyuru grubumuza katılıyorsun; kontenjanlı
+        atölye ve gezilerde üyelerimiz ilk sırada.
+      </p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="uye-ol.html">Üye Ol</a>
+        <a class="btn btn-ghost" href="iletisim.html">Etkinlik Fikri Öner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script src="js/data.js"></script>
+<script>
+window.renderPage = function () {
+  const D = window.UGITEK;
+  const { esc, eventHead, fixMissingPhotos, stagger } = window.UGITEK_UI;
+
+  /* --- tüm programlar --- */
+  document.getElementById('eventGrid').innerHTML = D.events.map((e) => `
+    <article class="event-card card-glow" data-reveal>
+      ${eventHead(e)}
+      <h3>${esc(e.title)}</h3>
+      <p>${esc(e.text)}</p>
+      <div class="event-foot">
+        ${e.meta.map((m) => '<span>' + esc(m[0]) + ': <b>' + esc(m[1]) + '</b></span>').join('')}
+      </div>
+    </article>`).join('');
+
+  /* --- format açıklamaları --- */
+  document.getElementById('pillars').innerHTML = D.pillars.map((p, i) => `
+    <div class="acc-item" data-open="${i === 0 ? 'true' : 'false'}" data-reveal>
+      <button class="acc-head" aria-expanded="${i === 0}">
+        <span class="acc-text">${esc(p.title)}</span>
+        <span class="acc-icon" aria-hidden="true"></span>
+      </button>
+      <div class="acc-body"><div>
+        <p>${esc(p.text)}</p>
+        <ul>${p.bullets.map((b) => '<li>' + esc(b) + '</li>').join('')}</ul>
+      </div></div>
+    </div>`).join('');
+
+  /* --- geçmiş etkinlikler --- */
+  document.getElementById('archiveGrid').innerHTML = D.archive.map((a) => `
+    <article class="card card-glow" data-reveal>
+      <div style="display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:.8rem">
+        <span class="tag tag-hot">${esc(a.when)}</span>
+        <span class="tag">${esc(a.where)}</span>
+      </div>
+      <h3 style="margin-bottom:.5rem">${esc(a.title)}</h3>
+      <p style="font-size:.93rem">${esc(a.text)}</p>
+    </article>`).join('');
+
+  /* --- galeri: data.js'te liste doluysa gösterilir --- */
+  const gal = document.getElementById('galleryGrid');
+  const section = document.getElementById('galeri');
+  const kareler = D.gallery || [];
+
+  if (kareler.length) {
+    section.hidden = false;
+    gal.innerHTML = kareler.map((g) => `
+      <figure data-reveal="scale">
+        <img src="assets/events/${g.file}" alt="${esc(g.caption)}" loading="lazy" decoding="async">
+        <figcaption>${esc(g.caption)}</figcaption>
+      </figure>`).join('');
+
+    // Dosya adı yanlışsa o kare sessizce kaldırılır, sayfa bozulmaz.
+    gal.querySelectorAll('img').forEach((img) => {
+      img.addEventListener('error', () => {
+        const f = img.closest('figure');
+        if (f) f.remove();
+        if (!gal.children.length) section.hidden = true;
+      }, { once: true });
+    });
+
+    stagger(gal, 60);
+  }
+
+  stagger(document.getElementById('eventGrid'), 70);
+  stagger(document.getElementById('archiveGrid'), 70);
+  fixMissingPhotos();
+};
+</script>
+<script src="js/site.js"></script>
+</body>
+</html>

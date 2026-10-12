@@ -1,0 +1,5 @@
+node_modules/
+*.log
+
+# yuklemeye hazir paket (npm run zip ile uretilir)
+ugitek-site.zip

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Üye Ol — UGİTEK</title>
+<meta name="description" content="UGİTEK üyelik başvuru formu. Manisa Celal Bayar Üniversitesi öğrencisiysen iki dakikada aramıza katıl.">
+<meta name="theme-color" content="#050a18">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="join">
+
+<div id="nav-root"></div>
+
+<main class="form-shell">
+  <div class="wrap">
+
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Üyelik Başvurusu</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem)">Aramıza <span class="grad-text">katıl.</span></h1>
+      <p class="lead">
+        Manisa Celal Bayar Üniversitesi öğrencisiysen tek yapman gereken bu formu doldurmak.
+        Üyelik ücretsiz, başvurun yönetim kuruluna anında düşüyor.
+      </p>
+    </div>
+
+    <div class="form-layout">
+
+      <!-- ------------------------------------------------------------ form -->
+      <div>
+        <div class="form-card" data-reveal>
+          <form id="joinForm" novalidate>
+            <div class="alert" role="alert"></div>
+
+            <fieldset>
+              <legend>Kimlik bilgileri</legend>
+              <div class="field-grid">
+                <div class="field full">
+                  <label for="fullName">Ad Soyad <span class="req">*</span></label>
+                  <input id="fullName" name="fullName" type="text" autocomplete="name"
+                         placeholder="Örn. Ayşe Yılmaz" required>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="studentNo">Öğrenci Numarası <span class="req">*</span></label>
+                  <input id="studentNo" name="studentNo" type="text" inputmode="numeric"
+                         placeholder="Örn. 210315023" required>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Telefon <span class="req">*</span></label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel"
+                         placeholder="05XX XXX XX XX" required>
+                  <span class="hint">WhatsApp duyuru grubuna eklemek için kullanıyoruz.</span>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field full">
+                  <label for="email">E-posta <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email"
+                         placeholder="ornek@ogr.cbu.edu.tr" required>
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Okul bilgileri</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="department">Bölüm <span class="req">*</span></label>
+                  <input id="department" name="department" type="text" list="departments"
+                         placeholder="Bölümünü yaz veya seç" required>
+                  <datalist id="departments"></datalist>
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="grade">Sınıf <span class="req">*</span></label>
+                  <select id="grade" name="grade" required>
+                    <option value="">Seçiniz…</option>
+                  </select>
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>İlgi alanların</legend>
+              <div class="field full">
+                <label>Hangi konular seni heyecanlandırıyor?</label>
+                <span class="hint" style="margin-bottom:.35rem">
+                  İstediğin kadar seçebilirsin — etkinlik planlarken buna bakıyoruz.
+                </span>
+                <div class="chips" id="interestChips"></div>
+              </div>
+            </fieldset>
+
+            <fieldset style="margin-bottom:0">
+              <legend>Son bir şey</legend>
+              <div class="field full">
+                <label for="motivation">UGİTEK’ten beklentin ne? <span class="hint" style="font-weight:400">(isteğe bağlı)</span></label>
+                <textarea id="motivation" name="motivation"
+                          placeholder="Birkaç cümle yeter. Neyi merak ediyorsun, neye katkı vermek istersin?"></textarea>
+                <span class="err"></span>
+              </div>
+
+              <div class="field full" style="margin-top:1.1rem">
+                <label class="check">
+                  <input type="checkbox" name="kvkk" required>
+                  <span>
+                    Verdiğim bilgilerin topluluk üyelik işlemleri ve etkinlik duyuruları
+                    için işlenmesini kabul ediyorum. Bilgilerim üçüncü kişilerle paylaşılmaz.
+                  </span>
+                </label>
+                <span class="err"></span>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Başvuruyu Gönder</span>
+              </button>
+              <span class="form-note">
+                Gönderdikten sonra yönetim kurulu başvurunu inceleyip sana dönüş yapacak.
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <!-- --------------------------------------------------- başarı ekranı -->
+        <div class="form-card success-panel" id="successPanel">
+          <div class="success-mark" aria-hidden="true">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h2>Başvurun bize ulaştı! 🎉</h2>
+          <p style="max-width:48ch;margin-inline:auto">
+            Yönetim kurulumuz başvuruları düzenli olarak inceliyor. Onaylandığında
+            e-posta ya da telefon üzerinden sana ulaşıp WhatsApp duyuru grubumuza ekleyeceğiz.
+          </p>
+          <p style="max-width:48ch;margin:1rem auto 0">
+            Bu arada Instagram’dan bizi takip etmeyi unutma — etkinlik duyuruları önce orada çıkıyor.
+          </p>
+          <div class="success-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/mcbu_ugitek/" target="_blank" rel="noopener">Instagram’da Takip Et</a>
+            <a class="btn btn-ghost" href="/etkinlikler">Etkinliklere Göz At</a>
+            <a class="btn btn-ghost" href="/">Ana Sayfa</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------- yan panel -->
+      <aside class="form-side">
+        <div class="card" data-reveal="right">
+          <h3 style="margin-bottom:1rem">Sırada ne var?</h3>
+          <ol style="margin:0;padding-left:1.1rem;display:grid;gap:.85rem;color:var(--muted);font-size:.92rem">
+            <li><strong style="color:var(--text)">Formu gönder.</strong> İki dakika sürüyor.</li>
+            <li><strong style="color:var(--text)">Değerlendirme.</strong> Yönetim kurulu başvuruları toplu olarak inceliyor.</li>
+            <li><strong style="color:var(--text)">Dönüş.</strong> E-posta veya telefonla sana ulaşıyoruz.</li>
+            <li><strong style="color:var(--text)">Katıl.</strong> Duyuru grubuna ekleniyorsun ve ilk etkinlikte görüşüyoruz.</li>
+          </ol>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:90ms">
+          <h3 style="margin-bottom:.7rem">Üyelik ücretsiz</h3>
+          <p style="font-size:.92rem">
+            Aidat yok, zorunluluk yok. Etkinliklerimizin neredeyse tamamı ücretsiz;
+            ücretli olanlar duyuruda ayrıca belirtilir.
+          </p>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:180ms">
+          <h3 style="margin-bottom:.7rem">Görev de almak ister misin?</h3>
+          <p style="font-size:.92rem;margin-bottom:1.1rem">
+            Sadece katılmakla kalmayıp topluluğu yöneten ekiplerden birinde çalışmak
+            istiyorsan idari kadro başvurusuna göz at.
+          </p>
+          <a class="btn btn-ghost btn-sm" href="/idari-kadro">İdari Kadro Başvurusu</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/forms.js"></script>
+<script>
+window.renderPage = function () {
+  const D = window.UGITEK;
+  const { esc } = window.UGITEK_UI;
+
+  document.getElementById('departments').innerHTML =
+    D.departments.map((d) => '<option value="' + esc(d) + '"></option>').join('');
+
+  document.getElementById('grade').insertAdjacentHTML('beforeend',
+    D.classes.map((c) => '<option>' + esc(c) + '</option>').join(''));
+
+  document.getElementById('interestChips').innerHTML = D.interests.map((i) =>
+    '<label class="chip"><input type="checkbox" name="interests" data-group="1" value="' +
+    esc(i) + '">' + esc(i) + '</label>').join('');
+
+  // data.js'te externalForms.membership doluysa Google Form'a yönlendir.
+  if (window.UGITEK_FORM.useExternalForm('membership', 'joinForm', 'Üyelik başvurusu')) return;
+
+  window.UGITEK_FORM.wire({
+    form: 'joinForm',
+    endpoint: '/api/applications/membership',
+    panel: 'successPanel',
+  });
+};
+</script>
+<script src="/js/site.js"></script>
+</body>
+</html>

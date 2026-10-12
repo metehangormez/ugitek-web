@@ -1,0 +1,32 @@
+# UGİTEK — Netlify yapılandırması
+#
+# Yayınlamak için:
+#   npm run build:site
+#   npx netlify-cli deploy --prod
+#
+# Netlify panelinde şu ortam değişkenleri tanımlı olmalı:
+#   ADMIN_PASSWORD, SESSION_SECRET
+
+[build]
+  publish = "static"
+  command = "npm run build:site"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Statik dosyalar uzun süre önbelleklenmesin; içerik güncellemeleri hemen görünsün.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

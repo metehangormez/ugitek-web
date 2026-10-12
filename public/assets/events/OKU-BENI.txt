@@ -1,0 +1,41 @@
+ETKİNLİK FOTOĞRAFLARI
+=====================
+
+Bu klasöre etkinlik fotoğraflarını koyun. Dosya adları aşağıdaki gibi olmalı.
+Koymadığınız fotoğraflar sorun çıkarmaz: o kart otomatik olarak eski ikonlu
+hâlinde görünür, galeride ise o kare hiç çıkmaz. Hiç fotoğraf yoksa galeri
+bölümü tamamen gizlenir. Yani istediğiniz hızda ekleyebilirsiniz.
+
+ETKİNLİK KARTLARI (16:9 en-boy oranı, örn. 1280x720)
+----------------------------------------------------
+  future-tech-4.jpg      Future Tech 4
+  future-tech-rose.jpg   Future Tech | Rose
+  aegeus-bootcamp.jpg    AEGEUS Bootcamp
+  mezuna-sor.jpg         Mezuna Sor
+  quiz-night.jpg         Quiz Night
+  teknik-gezi.jpg        Teknik Geziler
+  senlik-standi.jpg      Şenlik Standı
+  tanisma.jpg            Tanışma Toplantısı
+
+GALERİ (4:3 en-boy oranı, örn. 1200x900)
+-----------------------------------------
+  future-tech-3.jpg      Future Tech 3 · SUMMIT
+  future-tech-rose.jpg   (kartla aynı dosya, tekrar koymaya gerek yok)
+  aegeus-bootcamp.jpg    (kartla aynı dosya)
+  mcbukaf-stand.jpg      MCBÜKAF standı
+  mezuna-sor.jpg         (kartla aynı dosya)
+  quiz-night.jpg         (kartla aynı dosya)
+  teknik-gezi.jpg        (kartla aynı dosya)
+  tanisma.jpg            (kartla aynı dosya)
+
+Galeri listesini ve başlıkları değiştirmek için:
+  public/js/data.js  ->  gallery
+
+ÖNERİLER
+--------
+- Dosya boyutu 300 KB altında olsun; sayfa hızlı açılsın.
+  (squoosh.app veya tinypng.com ücretsiz ve tarayıcıda çalışır)
+- .jpg kullanın. Şeffaflık gerekmiyorsa PNG gereksiz yere büyük olur.
+- Yatay (landscape) fotoğraf seçin; kartlar 16:9 kırpıyor.
+- İnsan yüzlerinin ortaya yakın olmasına dikkat edin, kenarlar kırpılabilir.
+- Dosya adlarında Türkçe karakter, boşluk ve büyük harf KULLANMAYIN.

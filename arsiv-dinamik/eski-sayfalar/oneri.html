@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Öneri Kutusu — UGİTEK</title>
+<meta name="description" content="UGİTEK öneri kutusu. Etkinlik fikri, konuk önerisi, gezi talebi veya geri bildirimini bize ilet — istersen anonim olarak.">
+<meta name="theme-color" content="#050a18">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="suggestion">
+
+<div id="nav-root"></div>
+
+<main class="form-shell">
+  <div class="wrap">
+
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Öneri Kutusu</span>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem)">Bir fikrin mi var? <span class="grad-text">Anlat.</span></h1>
+      <p class="lead">
+        Aklında bir etkinlik fikri, davet etmemizi istediğin bir konuk ya da gitmemizi
+        istediğin bir yer mi var? Belki de bir şeyi yanlış yapıyoruz ve söylemek istiyorsun.
+        Kutu burada — istersen adını hiç yazma.
+      </p>
+    </div>
+
+    <div class="form-layout">
+
+      <!-- ------------------------------------------------------------ form -->
+      <div>
+        <div class="form-card" data-reveal>
+          <form id="ideaForm" novalidate>
+            <div class="alert" role="alert"></div>
+
+            <fieldset>
+              <legend>Fikrin</legend>
+
+              <div class="field full" style="margin-bottom:1.1rem">
+                <label for="category">Konu başlığı</label>
+                <select id="category" name="category"></select>
+                <span class="err"></span>
+              </div>
+
+              <div class="field full">
+                <label for="message">Ne söylemek istersin? <span class="req">*</span></label>
+                <textarea id="message" name="message" required style="min-height:170px"
+                          placeholder="Örn. “Yazılım sektöründen bir kadın CTO'yu Mezuna Sor'a davet edebilir misiniz?” ya da “Teknoparka bir gezi çok iyi olurdu.”"></textarea>
+                <span class="hint"><span id="charCount">0</span> karakter · en az 15</span>
+                <span class="err"></span>
+              </div>
+            </fieldset>
+
+            <fieldset style="margin-bottom:0">
+              <legend>İletişim</legend>
+
+              <div class="field full" style="margin-bottom:1.1rem">
+                <label class="check">
+                  <input type="checkbox" name="anonymous" id="anonymous">
+                  <span>
+                    <strong style="color:var(--text)">Anonim gönder.</strong>
+                    İşaretlersen isim ve e-posta alanları gönderilmez; fikrini kimin
+                    yazdığını biz de göremeyiz.
+                  </span>
+                </label>
+              </div>
+
+              <div class="field-grid" id="contactFields">
+                <div class="field">
+                  <label for="fullName">Ad Soyad</label>
+                  <input id="fullName" name="fullName" type="text" autocomplete="name"
+                         placeholder="İsteğe bağlı">
+                  <span class="err"></span>
+                </div>
+
+                <div class="field">
+                  <label for="email">E-posta</label>
+                  <input id="email" name="email" type="email" autocomplete="email"
+                         placeholder="Dönüş yapalım mı?">
+                  <span class="err"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Gönder</span>
+              </button>
+              <span class="form-note">
+                Gelen her fikir yönetim kurulu toplantısında okunuyor.
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <!-- --------------------------------------------------- başarı ekranı -->
+        <div class="form-card success-panel" id="successPanel">
+          <div class="success-mark" aria-hidden="true">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h2>Fikrin kutuda! 💡</h2>
+          <p style="max-width:48ch;margin-inline:auto">
+            Teşekkürler. Yönetim kurulu toplantısında gündeme alacağız.
+            İletişim bilgisi bıraktıysan hayata geçtiğinde ilk sana haber vereceğiz.
+          </p>
+          <div class="success-actions">
+            <a class="btn btn-primary" href="/oneri">Bir Fikir Daha Var</a>
+            <a class="btn btn-ghost" href="/etkinlikler">Etkinliklere Bak</a>
+            <a class="btn btn-ghost" href="/">Ana Sayfa</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------- yan panel -->
+      <aside class="form-side">
+        <div class="card" data-reveal="right">
+          <h3 style="margin-bottom:1rem">Neler işe yarıyor?</h3>
+          <ul style="margin:0;padding-left:1.1rem;display:grid;gap:.6rem;color:var(--muted);font-size:.92rem">
+            <li>Somut bir konuk ismi ya da şirket önerisi</li>
+            <li>Gitmek istediğin bir tesis / teknopark</li>
+            <li>Öğrenmek istediğin bir atölye konusu</li>
+            <li>Beğenmediğin bir şey — dürüst geri bildirim en değerlisi</li>
+          </ul>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:90ms">
+          <h3 style="margin-bottom:.7rem">Anonimlik gerçekten anonim</h3>
+          <p style="font-size:.92rem">
+            Anonim kutusunu işaretlediğinde isim ve e-posta alanları sunucuya hiç
+            gönderilmez. Panelde sadece mesajın görünür.
+          </p>
+        </div>
+
+        <div class="card" data-reveal="right" style="--delay:180ms">
+          <h3 style="margin-bottom:.7rem">Doğrudan ulaşmak istersen</h3>
+          <p style="font-size:.92rem;margin-bottom:1.1rem">
+            Instagram DM’lerimiz de her zaman açık. Acil bir konuysa oradan yazmak daha hızlı.
+          </p>
+          <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/mcbu_ugitek/" target="_blank" rel="noopener">@mcbu_ugitek</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/forms.js"></script>
+<script>
+window.renderPage = function () {
+  const D = window.UGITEK;
+  const { esc } = window.UGITEK_UI;
+
+  document.getElementById('category').innerHTML =
+    D.suggestionCategories.map((c) => '<option>' + esc(c) + '</option>').join('');
+
+  /* --- karakter sayacı --- */
+  const msg = document.getElementById('message');
+  const count = document.getElementById('charCount');
+  msg.addEventListener('input', () => { count.textContent = msg.value.trim().length; });
+
+  /* --- anonim seçilince iletişim alanlarını devre dışı bırak --- */
+  const anon = document.getElementById('anonymous');
+  const contact = document.getElementById('contactFields');
+  anon.addEventListener('change', () => {
+    const off = anon.checked;
+    contact.style.opacity = off ? '.4' : '1';
+    contact.style.pointerEvents = off ? 'none' : '';
+    contact.querySelectorAll('input').forEach((el) => {
+      el.disabled = off;
+      if (off) el.value = '';
+    });
+  });
+
+  window.UGITEK_FORM.wire({
+    form: 'ideaForm',
+    endpoint: '/api/suggestions',
+    panel: 'successPanel',
+  });
+};
+</script>
+<script src="/js/site.js"></script>
+</body>
+</html>

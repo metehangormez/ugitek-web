@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yönetim Paneli — UGİTEK</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050a18">
+<script>/* Tema, sayfa boyanmadan uygulanır ki geçişte titreme olmasın. */
+try{var t=localStorage.getItem('ugitek-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="admin">
+
+<div id="nav-root"></div>
+
+<main class="admin-shell">
+  <div class="wrap">
+
+    <!-- ------------------------------------------------------------ giriş -->
+    <section class="login-box" id="loginBox" hidden>
+      <div class="lock" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="4" y="10.5" width="16" height="10.5" rx="3"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+      </div>
+      <h1 style="font-size:1.5rem">Yönetim Paneli</h1>
+      <p style="font-size:.92rem;margin-top:.5rem">
+        Bu alan yönetim kuruluna özeldir. Devam etmek için panel şifresini gir.
+      </p>
+
+      <form id="loginForm" novalidate>
+        <div class="alert" role="alert"></div>
+        <div class="field">
+          <label for="password">Panel şifresi</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <span class="err"></span>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Giriş Yap</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- --------------------------------------------------------- dashboard -->
+    <section id="dashboard" hidden>
+
+      <div class="admin-head">
+        <h1>Başvuru Paneli</h1>
+        <button class="btn btn-ghost btn-sm" id="refreshBtn">Yenile</button>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Çıkış Yap</button>
+      </div>
+
+      <div class="stat-row" id="statRow"></div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-type="membership" role="tab">Üyelik Başvuruları</button>
+        <button class="tab" data-type="staff" role="tab">İdari Kadro</button>
+        <button class="tab" data-type="suggestion" role="tab">Öneriler</button>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="İsim, numara, e-posta, bölüm ara…" aria-label="Ara">
+        <select id="statusFilter" aria-label="Duruma göre filtrele">
+          <option value="">Tüm durumlar</option>
+          <option value="new">Yeni</option>
+          <option value="reviewing">İnceleniyor</option>
+          <option value="accepted">Kabul</option>
+          <option value="rejected">Red</option>
+        </select>
+        <select id="sortBy" aria-label="Sırala">
+          <option value="new">Önce en yeni</option>
+          <option value="old">Önce en eski</option>
+          <option value="name">İsme göre</option>
+        </select>
+        <span style="flex:1"></span>
+        <a class="btn btn-ghost btn-sm" id="exportBtn" href="/api/admin/export/membership">CSV İndir</a>
+      </div>
+
+      <div class="app-list" id="list"></div>
+    </section>
+
+  </div>
+</main>
+
+<div id="footer-root"></div>
+
+<script src="/js/data.js"></script>
+<script src="/js/admin.js"></script>
+<script src="/js/site.js"></script>
+</body>
+</html>
