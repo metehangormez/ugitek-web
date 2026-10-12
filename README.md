@@ -3,6 +3,8 @@
 Manisa Celal Bayar Üniversitesi **Uluslararası Girişimcilik ve Teknoloji Topluluğu**
 resmi web sitesi.
 
+🌐 **Canlı:** https://ugitek.tech
+
 **Tamamen statik bir sitedir.** Sunucu kodu, veritabanı, giriş paneli yoktur —
 yalnızca HTML, CSS ve JavaScript. Üyelik ve başvurular Google Form / WhatsApp /
 Instagram üzerinden yürür (bağlantılar Linktree'dekiyle aynıdır).
@@ -12,41 +14,53 @@ PHP, Node.js veya veritabanı desteği gerekmez.
 
 ---
 
-## Yükleme (FTP)
+## Yayınlama
 
-Yüklenecek olan **`public/` klasörünün içindekilerdir** — klasörün kendisi değil.
+Site **GitHub Pages** üzerinde, **https://ugitek.tech** adresinde yayınlanır.
 
-1. FTP istemcinizle (FileZilla, WinSCP…) sunucuya bağlanın.
-2. Sitenin yayın klasörüne girin. Genellikle şunlardan biridir:
-   `public_html`, `www`, `httpdocs`, `htdocs`.
-3. `public/` içindeki **her şeyi** oraya kopyalayın:
+### Nasıl güncellenir?
 
-```
-index.html
-biz-kimiz.html
-etkinlikler.html
-uye-ol.html
-idari-kadro.html
-iletisim.html
-404.html
-css/
-js/
-assets/
+`main` dalına yapılan her push otomatik olarak yayına çıkar. `public/` klasöründe
+bir şey değiştirip:
+
+```bash
+git add -A
+git commit -m "etkinlik eklendi"
+git push
 ```
 
-4. `https://alanadiniz/` adresini açın. Bitti.
+Bir dakika içinde canlıdır. Durumu GitHub'da **Actions** sekmesinden izleyebilirsiniz.
 
-> **Alt klasöre de yükleyebilirsiniz.** Tüm bağlantılar görelidir; site
-> `alanadi.com/` kökünde de `alanadi.com/ugitek/` altında da sorunsuz çalışır.
+Yayın akışı `.github/workflows/deploy.yml` dosyasında tanımlı; `public/` klasörünü
+paketleyip Pages'e gönderir. Başka bir ayar gerekmez.
 
-`npm run zip` komutu `ugitek-site.zip` üretir. FTP paneliniz zip açabiliyorsa
-tek dosya yükleyip sunucuda açmak daha hızlıdır.
+### Alan adı ayarları
 
-### Küçük notlar
-- Dosya adlarında Türkçe karakter ve boşluk yok; Linux sunucularda sorun çıkmaz.
-- `assets/team/` klasörü boş olabilir; fotoğraf yoksa site baş harfleri gösterir.
-- Sunucunuzda özel hata sayfası ayarı varsa `404.html` dosyasını gösterecek
-  şekilde ayarlayabilirsiniz (Apache için `.htaccess`: `ErrorDocument 404 /404.html`).
+`public/CNAME` dosyası `ugitek.tech` yazar — GitHub Pages özel alan adını buradan okur.
+**Bu dosyayı silmeyin.**
+
+Alan adının DNS kayıtları (get.tech panelinde) şöyle olmalı:
+
+| Tür | Ad | Değer |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `<kullanıcı-adı>.github.io` |
+
+HTTPS sertifikasını GitHub ücretsiz olarak kendisi alır (Settings → Pages →
+*Enforce HTTPS*). DNS yayılması 10 dakika ile birkaç saat arasında sürebilir.
+
+### Üniversite sunucusuna (FTP) yüklemek gerekirse
+
+Site tamamen statiktir, herhangi bir yere FTP ile de yüklenebilir:
+`public/` klasörünün **içindekileri** sunucunun yayın klasörüne (`public_html`,
+`www`, `htdocs`…) kopyalamanız yeterli. `npm run zip` komutu hazır bir paket üretir.
+
+Tüm bağlantılar görelidir; site alan adının kökünde de bir alt klasörde de çalışır.
+Yalnızca `og:` etiketleri ve `sitemap.xml` içindeki `https://ugitek.tech` adresini
+yeni adrese göre değiştirmeniz gerekir.
 
 ---
 
@@ -180,7 +194,10 @@ bir daire içinde gösterir.
 
 ```
 UGITEK/
-├── public/              ← FTP'ye YÜKLENECEK KLASÖR
+├── .github/workflows/
+│   └── deploy.yml       GitHub Pages otomatik yayın akışı
+├── public/              ← YAYINLANAN KLASÖR
+│   ├── CNAME            Özel alan adı (ugitek.tech) — silmeyin
 │   ├── *.html
 │   ├── css/style.css    Tüm tasarım sistemi + iki tema
 │   ├── js/
