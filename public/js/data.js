@@ -62,7 +62,7 @@ window.UGITEK = {
     },
     {
       title: 'Mezuna Sor & Kariyer',
-      text: 'Mezun olmuş abi ve ablalarımızı kampüse davet ediyoruz. CV, staj, mülakat, ilk iş, yurt dışı süreçleri... Merak edilen her şey filtresiz konuşuluyor.',
+      text: 'Mezunlarımızı kampüse davet ediyoruz. CV, staj, mülakat, ilk iş, yurt dışı süreçleri... Merak edilen her şey filtresiz konuşuluyor.',
       bullets: ['Sektörde çalışan mezunlarla söyleşi', 'CV ve LinkedIn kliniği', 'Staj ve mülakat tüyoları', 'Birebir soru-cevap'],
     },
     {
@@ -112,7 +112,7 @@ window.UGITEK = {
       photo: '',
       tag: 'Kariyer',
       tagType: 'hot',
-      text: 'Mezun olmuş abi ve ablalarımızla filtresiz kariyer sohbeti. Staj, mülakat, ilk iş ve yurt dışı süreçlerini deneyimleyenlerden dinliyoruz.',
+      text: 'Mezunlarımızla filtresiz kariyer sohbeti. Staj, mülakat, ilk iş ve yurt dışı süreçlerini deneyimleyenlerden dinliyoruz.',
       meta: [['Seri', '2 bölüm yapıldı'], ['Format', 'Söyleşi + Soru-cevap']],
     },
     {

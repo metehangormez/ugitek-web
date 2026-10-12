@@ -550,6 +550,26 @@
 
     initReveal();
     initCounters();
+    jumpToHash();
+  }
+
+  /**
+   * Sayfa içeriği JavaScript ile basıldığı için tarayıcının adresteki
+   * #capa'ya atlaması kayıyor: tarayıcı atlıyor, sonra içerik yüklenince
+   * her şey aşağı iniyor. Render bittikten sonra hedefe elle gidiyoruz.
+   */
+  function jumpToHash() {
+    const id = decodeURIComponent(location.hash.replace('#', ''));
+    if (!id) return;
+
+    const git = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+    };
+
+    requestAnimationFrame(git);
+    // Yazı tipleri ve görseller yerleşince konum biraz kayabiliyor.
+    setTimeout(git, 350);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
