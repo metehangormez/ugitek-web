@@ -291,8 +291,6 @@ window.UGITEK = {
     { name: 'Sosyal Medya Ekibi', icon: 'social', desc: 'Instagram/TikTok içerik üretimi, tasarım, reels çekimi ve etkileşim.' },
     { name: 'İletişim Ekibi', icon: 'envelope', desc: 'Kurum içi/dışı yazışmalar, duyurular, konuk ve katılımcı iletişimi.' },
     { name: 'Organizasyon ve Sosyal Etkinlik Ekibi', icon: 'calendar', desc: 'Etkinlik kurgusu, sahne akışı, lojistik ve gün içi koordinasyon.' },
-    { name: 'Tasarım Ekibi', icon: 'palette', desc: 'Afiş, sunum, sosyal medya görselleri ve etkinlik kimliği tasarımı.' },
-    { name: 'Yazılım ve Web Ekibi', icon: 'code', desc: 'Site bakımı, kayıt sistemleri, otomasyon ve veri raporlama.' },
   ],
 
   interests: [

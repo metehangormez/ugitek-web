@@ -86,7 +86,7 @@ açabilirsiniz. Neredeyse her şey çalışır, ama yerel sunucu gerçek ortama 
 | `biz-kimiz.html` | Hikâye, misyon/vizyon, değerler, zaman çizelgesi, **tüm yönetim kurulu** |
 | `etkinlikler.html` | Programlar, format açıklamaları, geçmiş etkinlik arşivi |
 | `uye-ol.html` | Üyelik adımları + **Google Form**, WhatsApp ve Instagram bağlantıları |
-| `idari-kadro.html` | Yedi ekibin ne yaptığı, başvuru süreci, beklentiler |
+| `idari-kadro.html` | Beş ekibin ne yaptığı, başvuru süreci, beklentiler |
 | `iletisim.html` | İletişim kanalları, öneri/iş birliği yönlendirmesi |
 | `404.html` | Sayfa bulunamadı |
 
